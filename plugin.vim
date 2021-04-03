@@ -5,6 +5,12 @@ if empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall -- sync | source $HOME/.config/nvim/init.vim
 endif
 
+" Install missing plugins on Vim startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+
 " Plugins
 call plug#begin()
     " Appearance
