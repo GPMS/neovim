@@ -36,10 +36,11 @@ set signcolumn=number
 set splitright
 set splitbelow
 
-" Delete trailing whitespace
 if has("autocmd")
+    " Delete trailing whitespace
     autocmd BufWritePre * %s/\s\+$//e
-    autocmd! BufWritePost *.vim source %
+    " Source init.vim after saving
+    autocmd! BufWritePost init.vim source %
 endif
 
 augroup highlight_yank
