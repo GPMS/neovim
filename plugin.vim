@@ -24,6 +24,7 @@ call plug#begin()
     " Linting
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
+    Plug 'SirVer/ultisnips'
     Plug 'sheerun/vim-polyglot'
     " Editing
     Plug 'kassio/neoterm'

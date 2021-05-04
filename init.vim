@@ -11,4 +11,5 @@ source ~/.config/nvim/plug-config/nvim-tree.vim
 source ~/.config/nvim/plug-config/debug.vim
 source ~/.config/nvim/plug-config/lsp.vim
 source ~/.config/nvim/plug-config/completion.vim
+source ~/.config/nvim/plug-config/ultisnips.vim
 luafile ~/.config/nvim/lua/plugins/telescope.lua
