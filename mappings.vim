@@ -28,10 +28,6 @@ vnoremap                K               :m '<-2<CR>gv=gv
 vnoremap                <               <gv
 vnoremap                >               >gv
 
-"FZF
-nnoremap                <C-p>           :Files<CR>
-nnoremap    <silent>    <C-t>           :! ctags --exclude={.vscode,compile_commands.json} -R .<CR>:Tags<CR>
-
 "Incsearch
 map                     /               <Plug>(incsearch-forward)
 map                     ?               <Plug>(incsearch-backward)

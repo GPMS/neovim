@@ -32,7 +32,8 @@ call plug#begin()
     Plug 'jiangmiao/auto-pairs'
     Plug 'justinmk/vim-sneak'
     " Switching between files
-    Plug 'junegunn/fzf'
-    Plug 'junegunn/fzf.vim'
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
