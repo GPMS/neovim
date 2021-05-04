@@ -15,7 +15,10 @@ autocmd VimEnter *
 call plug#begin()
     " Appearance
     Plug 'christianchiarulli/nvcode-color-schemes.vim'
+
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'majutsushi/tagbar'
