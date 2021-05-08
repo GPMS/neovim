@@ -22,7 +22,10 @@ endfunction
 nnoremap    <silent>    <A-t>           <CMD>call ToggleTerminal(12)<CR>
 tnoremap    <silent>    <A-t>           <C-\><C-n><CMD>call ToggleTerminal(12)<CR>
 
-tnoremap    <silent>    <C-k>           <C-\><C-n>:wincmd k<CR>
+" Split movement
+tnoremap    <silent>    <C-k>           <C-\><C-n><CMD>wincmd k<CR>
+tnoremap    <silent>    <C-h>           <C-\><C-n><CMD>wincmd h<CR>
+tnoremap    <silent>    <C-l>           <C-\><C-n><CMD>wincmd l<CR>
 
 " Build/Run commands
 tnoremap    <silent>    <F3>            clear<CR>Scripts/build.sh<CR>
