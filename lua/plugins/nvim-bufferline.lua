@@ -11,7 +11,7 @@ require'bufferline'.setup{
         right_trunc_marker = '',
         max_name_length = 20,
         max_prefix_length = 15,
-        tab_size = 18,
+        tab_size = 20,
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level, diagnostics_dict)
             return "("..count..")"
