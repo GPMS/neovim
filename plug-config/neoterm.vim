@@ -18,6 +18,9 @@ function ToggleTerminal(height)
     endif
 endfunction
 
+" Enter insert mode when in terminal
+autocmd BufWinEnter,WinEnter term://* startinsert
+
 " Open/Close terminal
 nnoremap    <silent>    <A-t>           <CMD>call ToggleTerminal(12)<CR>
 tnoremap    <silent>    <A-t>           <C-\><C-n><CMD>call ToggleTerminal(12)<CR>
