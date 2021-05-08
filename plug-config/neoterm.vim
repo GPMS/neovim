@@ -1,14 +1,31 @@
-function OpenTerminal(height)
-    split
-    exec "resize " . a:height
-    :Ttoggle<CR>
-    startinsert
+let g:open = 0
+
+function ToggleTerminal(height)
+    if &buftype ==# 'terminal'
+        :Ttoggle<CR>
+        let g:open = 0
+    else
+        if g:open
+            wincmd j
+            startinsert
+        else
+            let g:open = 1
+            split
+            exec "resize " . a:height
+            :Ttoggle<CR>
+            startinsert
+        endif
+    endif
 endfunction
 
-nnoremap    <silent>    <A-t>           :call OpenTerminal(12)<CR>
-tnoremap    <silent>    <A-t>           <C-\><C-n>:Ttoggle<CR>
+" Open/Close terminal
+nnoremap    <silent>    <A-t>           <CMD>call ToggleTerminal(12)<CR>
+tnoremap    <silent>    <A-t>           <C-\><C-n><CMD>call ToggleTerminal(12)<CR>
+
 tnoremap    <silent>    <C-k>           <C-\><C-n>:wincmd k<CR>
+
+" Build/Run commands
 tnoremap    <silent>    <F3>            clear<CR>Scripts/build.sh<CR>
 tnoremap    <silent>    <F4>            clear<CR>Scripts/run.sh<CR>
-nnoremap    <silent>    <F3>            :call OpenTerminal(12)<CR>Scripts/build.sh<CR>
-nnoremap    <silent>    <F4>            :call OpenTerminal(12)<CR>Scripts/run.sh<CR>
+nnoremap    <silent>    <F3>            <CMD>call ToggleTerminal(12)<CR>Scripts/build.sh<CR>
+nnoremap    <silent>    <F4>            <CMD>call ToggleTerminal(12)<CR>Scripts/run.sh<CR>
