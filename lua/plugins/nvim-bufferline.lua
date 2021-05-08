@@ -26,3 +26,7 @@ require'bufferline'.setup{
         sort_by = 'extension'
     }
 }
+
+local options = { noremap = true, silent = true }
+vim.api.nvim_set_keymap('n', '<TAB>', '<CMD>BufferLineCycleNext<CR>', options)
+vim.api.nvim_set_keymap('n', '<S-TAB>', '<CMD>BufferLineCyclePrev<CR>', options)
