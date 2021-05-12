@@ -13,28 +13,48 @@ autocmd VimEnter *
 
 " Plugins
 call plug#begin()
-    " Appearance
+    " Benchmark
+    Plug 'tweekmonster/startuptime.vim'
+
+    " VS Code Theme
     Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
+    " Status Bar
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
+    " File Browser
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
+
+    " Show Indentation Level
     Plug 'Yggdroot/indentLine'
+
+    " Highlight All Search Matches
     Plug 'haya14busa/incsearch.vim'
-    " Linting
+
+    " Completion
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
     Plug 'SirVer/ultisnips'
+
+    " Syntax Highlighting
     Plug 'sheerun/vim-polyglot'
-    " Editing
+
+    " Terminal Wrapper
     Plug 'kassio/neoterm'
+
+    " Smooth Scrolling
     Plug 'psliwka/vim-smoothie'
+
+    " Surroundings
     Plug 'tpope/vim-surround'
     Plug 'jiangmiao/auto-pairs'
+
+    " Quick Jump
     Plug 'justinmk/vim-sneak'
-    " Switching between files
+
+    " Fuzzy Finder
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
