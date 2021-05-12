@@ -26,7 +26,6 @@ set number
 set relativenumber
 set nowrap
 
-set nohlsearch
 set smartcase
 
 set noswapfile

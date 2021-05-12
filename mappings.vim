@@ -28,11 +28,6 @@ vnoremap                K               :m '<-2<CR>gv=gv
 vnoremap                <               <gv
 vnoremap                >               >gv
 
-"Incsearch
-map                     /               <Plug>(incsearch-forward)
-map                     ?               <Plug>(incsearch-backward)
-map                     g/              <Plug>(incsearch-stay)
-
 nnoremap                gF              :vsplit<CR>gf
 
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
