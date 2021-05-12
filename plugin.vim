@@ -21,7 +21,6 @@ call plug#begin()
 
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
-    Plug 'akinsho/nvim-bufferline.lua'
     Plug 'Yggdroot/indentLine'
     Plug 'haya14busa/incsearch.vim'
     " Linting
