@@ -38,7 +38,7 @@ set splitbelow
 if has("autocmd")
     " Delete trailing whitespace
     autocmd BufWritePre * %s/\s\+$//e
-    " Source init.vim after saving
+    " Source certain vim files after saving
     autocmd! BufWritePost init.vim source %
     autocmd! BufWritePost plugin.vim source %
 endif
