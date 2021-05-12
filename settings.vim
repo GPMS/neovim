@@ -40,6 +40,7 @@ if has("autocmd")
     autocmd BufWritePre * %s/\s\+$//e
     " Source init.vim after saving
     autocmd! BufWritePost init.vim source %
+    autocmd! BufWritePost plugin.vim source %
 endif
 
 augroup highlight_yank
