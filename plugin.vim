@@ -39,6 +39,7 @@ call plug#begin()
     Plug 'SirVer/ultisnips'
 
     " Syntax Highlighting
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'sheerun/vim-polyglot'
 
     " Terminal Wrapper

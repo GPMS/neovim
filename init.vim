@@ -15,3 +15,4 @@ source ~/.config/nvim/plug-config/lsp.vim
 source ~/.config/nvim/plug-config/completion.vim
 source ~/.config/nvim/plug-config/ultisnips.vim
 luafile ~/.config/nvim/lua/plugins/telescope.lua
+luafile ~/.config/nvim/lua/plugins/treesitter.lua
