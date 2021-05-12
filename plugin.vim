@@ -40,7 +40,6 @@ call plug#begin()
 
     " Syntax Highlighting
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'sheerun/vim-polyglot'
 
     " Terminal Wrapper
     Plug 'kassio/neoterm'
