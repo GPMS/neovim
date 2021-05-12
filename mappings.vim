@@ -35,7 +35,5 @@ map                     g/              <Plug>(incsearch-stay)
 
 nnoremap                gF              :vsplit<CR>gf
 
-nnoremap                <F2>            :TagbarToggle<CR>
-
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 
