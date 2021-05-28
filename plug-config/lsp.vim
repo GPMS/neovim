@@ -1,5 +1,5 @@
 luafile ~/.config/nvim/lua/lsp/init.lua
-luafile ~/.config/nvim/lua/lsp/lsp-clangd.lua
+luafile ~/.config/nvim/lua/lsp/lsp-ccls.lua
 luafile ~/.config/nvim/lua/lsp/lsp-vim.lua
 luafile ~/.config/nvim/lua/lsp/lsp-python.lua
 luafile ~/.config/nvim/lua/lsp/lsp-bash.lua

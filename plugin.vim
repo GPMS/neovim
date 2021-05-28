@@ -54,6 +54,7 @@ call plug#begin()
 
     " Quick Jump
     Plug 'justinmk/vim-sneak'
+    Plug 'derekwyatt/vim-fswitch'
 
     " Fuzzy Finder
     Plug 'nvim-lua/popup.nvim'
