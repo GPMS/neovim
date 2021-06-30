@@ -25,6 +25,7 @@ call plug#begin()
     " File Browser
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'folke/trouble.nvim'
 
     " Show Indentation Level
     Plug 'Yggdroot/indentLine'

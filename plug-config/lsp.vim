@@ -5,5 +5,6 @@ luafile ~/.config/nvim/lua/lsp/lsp-python.lua
 luafile ~/.config/nvim/lua/lsp/lsp-bash.lua
 luafile ~/.config/nvim/lua/lsp/lsp-lua.lua
 
+luafile ~/.config/nvim/lua/lsp/lsp-trouble.lua
 
 highlight! link mkdLineBreak NONE
