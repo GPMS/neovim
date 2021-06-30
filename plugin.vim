@@ -60,6 +60,7 @@ call plug#begin()
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-project.nvim'
 
     " Git
     Plug 'lewis6991/gitsigns.nvim'
