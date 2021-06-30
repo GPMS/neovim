@@ -56,7 +56,8 @@ require('telescope').setup {
 }
 
 local options = { noremap = true, silent = true }
-vim.api.nvim_set_keymap('n', '<C-p>', '<CMD>lua require(\'telescope.builtin\').find_files()<CR>', options)
-vim.api.nvim_set_keymap('n', '<C-b>', '<CMD>lua require(\'telescope.builtin\').buffers()<CR>', options)
-vim.api.nvim_set_keymap('n', '<C-t>', '<CMD>!ctags $(fd)<CR><CMD>lua require(\'telescope.builtin\').tags()<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>tf', ':Telescope find_files<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>tb', ':Telescope buffers<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>tg', ':Telescope live_grep<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>tt', ':!ctags $(fd)<CR>:Telescope tags<CR>', options)
 
