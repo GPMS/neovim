@@ -31,7 +31,7 @@ tnoremap    <silent>    <C-h>           <C-\><C-n><CMD>wincmd h<CR>
 tnoremap    <silent>    <C-l>           <C-\><C-n><CMD>wincmd l<CR>
 
 " Build/Run commands
-tnoremap    <silent>    <F3>            clear<CR>Scripts/build.sh<CR>
-tnoremap    <silent>    <F4>            clear<CR>Scripts/run.sh<CR>
-nnoremap    <silent>    <F3>            <CMD>call ToggleTerminal(12)<CR>Scripts/build.sh<CR>
-nnoremap    <silent>    <F4>            <CMD>call ToggleTerminal(12)<CR>Scripts/run.sh<CR>
+tnoremap    <silent>    <F3>            clear<CR>scripts/build.sh<CR>
+tnoremap    <silent>    <F4>            clear<CR>scripts/run.sh<CR>
+nnoremap    <silent>    <F3>            <CMD>call ToggleTerminal(12)<CR>scripts/build.sh<CR>
+nnoremap    <silent>    <F4>            <CMD>call ToggleTerminal(12)<CR>scripts/run.sh<CR>
