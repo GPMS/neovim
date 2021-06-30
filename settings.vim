@@ -31,7 +31,6 @@ set smartcase
 set noswapfile
 set nobackup
 set nowritebackup
-set signcolumn=number
 set splitright
 set splitbelow
 
