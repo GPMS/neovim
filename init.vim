@@ -4,7 +4,6 @@ source ~/.config/nvim/plugin.vim
 source ~/.config/nvim/settings.vim
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/plug-config/nvcode.vim
-source ~/.config/nvim/plug-config/airline.vim
 
 source ~/.config/nvim/plug-config/incsearch.vim
 source ~/.config/nvim/plug-config/neoterm.vim
@@ -16,3 +15,4 @@ source ~/.config/nvim/plug-config/completion.vim
 source ~/.config/nvim/plug-config/ultisnips.vim
 luafile ~/.config/nvim/lua/plugins/telescope.lua
 luafile ~/.config/nvim/lua/plugins/treesitter.lua
+luafile ~/.config/nvim/lua/plugins/galaxyline.lua

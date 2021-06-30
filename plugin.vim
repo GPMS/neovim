@@ -20,8 +20,7 @@ call plug#begin()
     Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
     " Status Bar
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
     " File Browser
     Plug 'kyazdani42/nvim-web-devicons'
