@@ -18,3 +18,4 @@ vim.api.nvim_set_keymap('n', '<Leader>rn', '<CMD>lua vim.lsp.buf.rename()<CR>', 
 vim.api.nvim_set_keymap('n', '<Leader>e', '<CMD>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>p', '<CMD>lua vim.lsp.diagnostic.goto_prev()<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>n', '<CMD>lua vim.lsp.diagnostic.goto_next()<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>f', '<CMD>lua vim.lsp.buf.formatting()<CR>', options)
