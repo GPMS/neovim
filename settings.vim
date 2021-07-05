@@ -31,6 +31,12 @@ set smartcase
 set noswapfile
 set nobackup
 set nowritebackup
+if !isdirectory($HOME."/.config/nvim/undo-dir")
+    call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
+endif
+set undodir=~/.config/nvim/undo-dir
+set undofile
+
 set splitright
 set splitbelow
 
