@@ -13,8 +13,9 @@ require('telescope').setup {
             override_file_sorter = true,
         },
         project = {
-            base_dir = '~/Documents/Projects',
-            max_depth = 3
+            base_dirs = {
+                {'~/Documents/Projects', max_depth = 3}
+            },
         }
     }
 }
