@@ -35,7 +35,8 @@ call plug#begin()
 
     " Completion
     Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
+    Plug 'hrsh7th/nvim-compe'
+    Plug 'ray-x/lsp_signature.nvim'
     Plug 'SirVer/ultisnips'
 
     " Syntax Highlighting

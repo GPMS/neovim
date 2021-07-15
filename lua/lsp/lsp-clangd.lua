@@ -1,5 +1,7 @@
 require('lspconfig').clangd.setup{
-    on_attach = require'completion'.on_attach,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach()
+    end,
     cmd = {
         "clangd", "--background-index", "--pch-storage=memory",
         "--clang-tidy", "--header-insertion=never"

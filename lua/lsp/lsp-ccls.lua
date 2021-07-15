@@ -1,5 +1,7 @@
 require('lspconfig').ccls.setup{
-    on_attach = require'completion'.on_attach,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach()
+    end
 }
 
 local options = { noremap = true, silent = true }
