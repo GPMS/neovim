@@ -43,8 +43,8 @@ call plug#begin()
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'tikhomirov/vim-glsl'
 
-    " Terminal Wrapper
-    Plug 'kassio/neoterm'
+    " Terminal
+    Plug 'akinsho/nvim-toggleterm.lua'
 
     " Smooth Scrolling
     Plug 'psliwka/vim-smoothie'
