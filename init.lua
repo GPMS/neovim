@@ -15,7 +15,6 @@ require("lsp.python")
 require("lsp.trouble")
 require("lsp.vim")
 
-require("plugins.nvcode")
 require("plugins.indentline")
 require("plugins.nvim-tree")
 require("plugins.nvim-compe")

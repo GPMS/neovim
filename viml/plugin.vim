@@ -16,8 +16,8 @@ call plug#begin()
     " Benchmark
     Plug 'tweekmonster/startuptime.vim'
 
-    " VS Code Theme
-    Plug 'christianchiarulli/nvcode-color-schemes.vim'
+    " Theme
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
     " Status Bar
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
