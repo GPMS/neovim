@@ -40,19 +40,6 @@ set undofile
 set splitright
 set splitbelow
 
-if has("autocmd")
-    " Delete trailing whitespace
-    autocmd BufWritePre * %s/\s\+$//e
-    " Source certain vim files after saving
-    autocmd! BufWritePost init.vim source %
-    autocmd! BufWritePost plugin.vim source %
-endif
-
-augroup highlight_yank
-    autocmd!
-    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
-augroup end
-
 highlight VertSplit cterm=NONE
 
 set colorcolumn=121
