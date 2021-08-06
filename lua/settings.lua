@@ -8,6 +8,7 @@ opt.signcolumn = "yes"
 opt.scrolloff = 999
 opt.mouse = "a"
 opt.lazyredraw = true
+opt.cursorline = true
 
 opt.termguicolors = true
 
