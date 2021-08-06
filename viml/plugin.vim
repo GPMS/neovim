@@ -22,6 +22,9 @@ call plug#begin()
     " Status Bar
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
+    " Reload config
+    Plug 'famiu/nvim-reload'
+
     " File Browser
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
