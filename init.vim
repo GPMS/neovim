@@ -6,7 +6,6 @@ source ~/.config/nvim/autocmd.vim
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/plug-config/nvcode.vim
 
-source ~/.config/nvim/plug-config/incsearch.vim
 source ~/.config/nvim/plug-config/indentline.vim
 source ~/.config/nvim/plug-config/nvim-tree.vim
 source ~/.config/nvim/plug-config/debug.vim

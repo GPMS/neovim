@@ -30,9 +30,6 @@ call plug#begin()
     " Show Indentation Level
     Plug 'Yggdroot/indentLine'
 
-    " Highlight All Search Matches
-    Plug 'haya14busa/incsearch.vim'
-
     " Completion
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-compe'
