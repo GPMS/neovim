@@ -21,6 +21,7 @@ require('telescope').setup {
 }
 
 require'telescope'.load_extension('project')
+require('telescope').load_extension('fzy_native')
 
 local options = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<Leader>tp', ':lua require\'telescope\'.extensions.project.project{}<CR>', options)
