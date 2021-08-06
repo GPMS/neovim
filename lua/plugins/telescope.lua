@@ -14,7 +14,7 @@ require('telescope').setup {
         },
         project = {
             base_dirs = {
-                {'~/Documents/Projects', max_depth = 3}
+                {'~/Documents/projects', max_depth = 3}
             },
         }
     }
