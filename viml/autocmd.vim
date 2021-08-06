@@ -1,7 +1,7 @@
 " Delete trailing whitespace
 autocmd BufWritePre * %s/\s\+$//e
 " Source certain vim files after saving
-autocmd! BufWritePost init.vim source %
+autocmd! BufWritePost init.lua luafile %
 autocmd! BufWritePost plugin.vim source %
 
 augroup highlight_yank
