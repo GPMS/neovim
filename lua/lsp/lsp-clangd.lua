@@ -13,7 +13,3 @@ require('lspconfig').clangd.setup{
         }
     }
 }
-
-local options = { noremap = true, silent = true }
-vim.api.nvim_set_keymap('n', 'gh', '<CMD>ClangdSwitchSourceHeader<CR>', options)
-vim.api.nvim_set_keymap('n', 'gH', '<CMD>vsplit<CR><CMD>ClangdSwitchSourceHeader<CR>', options)
