@@ -17,3 +17,4 @@ luafile ~/.config/nvim/lua/plugins/telescope.lua
 luafile ~/.config/nvim/lua/plugins/treesitter.lua
 luafile ~/.config/nvim/lua/plugins/gitsigns.lua
 luafile ~/.config/nvim/lua/plugins/galaxyline.lua
+luafile ~/.config/nvim/lua/plugins/lazygit.lua

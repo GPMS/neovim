@@ -66,5 +66,6 @@ call plug#begin()
 
     " Git
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'kdheepak/lazygit.nvim'
 call plug#end()
 
