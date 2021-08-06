@@ -1,9 +1,9 @@
 let g:mapleader = " "
 
-source ~/.config/nvim/plugin.vim
-source ~/.config/nvim/autocmd.vim
-source ~/.config/nvim/mappings.vim
-source ~/.config/nvim/plug-config/debug.vim
+source ~/.config/nvim/viml/plugin.vim
+source ~/.config/nvim/viml/autocmd.vim
+source ~/.config/nvim/viml/mappings.vim
+source ~/.config/nvim/viml/debug.vim
 
 luafile ~/.config/nvim/lua/settings.lua
 
