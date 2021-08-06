@@ -1,6 +1,18 @@
 nnoremap                <C-s>           :w<CR>
 nnoremap                <C-q>           :q<CR>
 
+" make Y behave the same as C and D
+nnoremap                Y               y$
+
+" keep cursor on the same spot when joining lines
+nnoremap                J               mzJ'z
+
+" Add undo breakpoints when inserting these characters
+inoremap                ,               ,<C-g>u
+inoremap                .               .<C-g>u
+inoremap                !               !<C-g>u
+inoremap                ?               ?<C-g>u
+
 nnoremap                H               ^
 nnoremap                L               $
 
