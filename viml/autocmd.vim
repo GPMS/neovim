@@ -1,8 +1,11 @@
 " Delete trailing whitespace
 autocmd BufWritePre * %s/\s\+$//e
 " Source certain vim files after saving
-autocmd! BufWritePost init.lua lua require("nvim-reload").Restart()
-autocmd! BufWritePost plugin.vim source %
+augroup reload_files
+    autocmd!
+    autocmd BufWritePost init.lua lua require("nvim-reload").Restart()
+    autocmd BufWritePost mappings.vim,autocmd.vim,plugin.vim source %
+augroup end
 
 augroup highlight_yank
     autocmd!
@@ -10,6 +13,6 @@ augroup highlight_yank
 augroup end
 
 augroup NvimTree
- autocmd!
- autocmd FileType NvimTree setlocal signcolumn=no nowrap
+    autocmd!
+    autocmd FileType NvimTree setlocal signcolumn=no nowrap
 augroup end
