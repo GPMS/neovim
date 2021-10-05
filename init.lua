@@ -3,7 +3,6 @@ vim.g.mapleader = ' '
 vim.cmd[[
     source ~/.config/nvim/viml/autocmd.vim
     source ~/.config/nvim/viml/mappings.vim
-    source ~/.config/nvim/viml/debug.vim
 ]]
 
 require('plugins')
