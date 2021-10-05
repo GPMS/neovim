@@ -16,9 +16,12 @@ inoremap                ?               ?<C-g>u
 nnoremap                H               ^
 nnoremap                L               $
 
+" Replace word under cursor
+nnoremap                <Leader>r       :%s/\<<C-R><C-W>\>//gc<Left><Left><Left>
+
 " Tab resize
 noremap                 <Up>            :resize +2<CR>
-noremap                 <Down>          :resize -1<CR>
+noremap                 <Down>          :resize -2<CR>
 noremap                 <Left>          :vertical resize +2<CR>
 noremap                 <Right>         :vertical resize -2<CR>
 
@@ -42,7 +45,8 @@ vnoremap                >               >gv
 
 nnoremap                gF              :vsplit<CR>gf
 
-:nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+nnoremap                qp              :cprev<CR>
+nnoremap                qn              :cnext<CR>
 
 " Completion
 inoremap <silent><expr> <C-Space>       compe#complete()
@@ -65,10 +69,6 @@ nnoremap <silent>       <Leader>n       :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent>       <Leader>f       :lua vim.lsp.buf.formatting()<CR>
 
 " Switch source/header
-" clangd
-"nnoremap <silent>       gh              <CMD>ClangdSwitchSourceHeader<CR>
-"nnoremap <silent>       gH              <CMD>vsplit<CR><CMD>ClangdSwitchSourceHeader<CR>
-" ccls
 nnoremap <silent>       gh              :FSHere<CR>
 nnoremap <silent>       gH              :vsplit<CR><CMD>FSHere<CR>
 
@@ -80,11 +80,15 @@ tnoremap <silent>       <A-t>           <C-\><C-n>:ToggleTerm<CR>
 tnoremap <silent>       <C-k>           <C-\><C-n>:wincmd k<CR>
 tnoremap <silent>       <C-h>           <C-\><C-n>:wincmd h<CR>
 tnoremap <silent>       <C-l>           <C-\><C-n>:wincmd l<CR>
+
 " Build/Run
 nnoremap <silent>       <F3>            :TermExec cmd="scripts/build.bash"<CR>
 nnoremap <silent>       <F4>            :TermExec cmd="scripts/run.bash"<CR>
 tnoremap <silent>       <F3>            clear<CR>scripts/build.bash<CR>
 tnoremap <silent>       <F4>            clear<CR>scripts/run.bash<CR>
+
+" File Browser
+nnoremap <silent>       <F1>            <cmd>NvimTreeToggle<CR>
 
 " Telescope
 nnoremap <silent>       <Leader>tp      :lua require'telescope'.extensions.project.project{}<CR>
