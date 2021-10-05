@@ -82,10 +82,18 @@ tnoremap <silent>       <C-h>           <C-\><C-n>:wincmd h<CR>
 tnoremap <silent>       <C-l>           <C-\><C-n>:wincmd l<CR>
 
 " Build/Run
-nnoremap <silent>       <F3>            :TermExec cmd="scripts/build.bash"<CR>
-nnoremap <silent>       <F4>            :TermExec cmd="scripts/run.bash"<CR>
-tnoremap <silent>       <F3>            clear<CR>scripts/build.bash<CR>
-tnoremap <silent>       <F4>            clear<CR>scripts/run.bash<CR>
+function! Build()
+    set makeprg=./build.sh
+    echo "Building..."
+    silent make!
+    vert copen
+    wincmd =
+    set makeprg&
+endfunction
+nnoremap <silent>       <F3>            :call Build()<CR>
+nnoremap <silent>       <F4>            :TermExec cmd="./run.sh"<CR>
+tnoremap <silent>       <F3>            clear<CR>./build.sh<CR>
+tnoremap <silent>       <F4>            clear<CR>./run.sh<CR>
 
 " File Browser
 nnoremap <silent>       <F1>            <cmd>NvimTreeToggle<CR>
