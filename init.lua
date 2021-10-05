@@ -8,12 +8,6 @@ vim.cmd("source ~/.config/nvim/viml/debug.vim")
 require("settings")
 
 require("lsp")
-require("lsp.bash")
-require("lsp.ccls")
-require("lsp.lua")
-require("lsp.python")
-require("lsp.trouble")
-require("lsp.vim")
 
 require("plugins.indentline")
 require("plugins.nvim-tree")
