@@ -5,8 +5,8 @@ vim.cmd[[
 
 require('user.plugins')
 
-require('impatient')
-require'impatient'.enable_profile()
+local impatient = require('impatient')
+impatient.enable_profile()
 
 require('user.material')
 require('user.options')
