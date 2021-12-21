@@ -41,8 +41,6 @@ opt.splitbelow = true
 
 -- Code width limit
 opt.colorcolumn = "121"
-vim.cmd("highlight ColorColumn ctermbg=0 guibg=#131521")
-vim.cmd("highlight CursorLine ctermbg=0 guibg=#131521")
 
 local disabled_built_ins = {
   "netrw",
