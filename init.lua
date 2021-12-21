@@ -3,24 +3,23 @@ vim.cmd[[
     source ~/.config/nvim/viml/mappings.vim
 ]]
 
-require('plugins')
+require('user.plugins')
 
 require('impatient')
 require'impatient'.enable_profile()
 
-require('plugins.material')
-require('settings')
+require('user.material')
+require('user.settings')
 
-require('lsp')
-require('plugins.nvim-cmp')
+require('user.lsp')
+require('user.nvim-cmp')
 
-require('plugins.galaxyline')
-require('plugins.indentline')
-require('plugins.nvim-tree')
-require('plugins.ultisnips')
-require('plugins.nvim-toggleterm')
-require('plugins.telescope')
-require('plugins.treesitter')
-require('plugins.gitsigns')
-require('plugins.galaxyline')
-require('plugins.lazygit')
+require('user.galaxyline')
+require('user.indentline')
+require('user.nvim-tree')
+require('user.ultisnips')
+require('user.nvim-toggleterm')
+require('user.telescope')
+require('user.treesitter')
+require('user.gitsigns')
+require('user.lazygit')

@@ -7,7 +7,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 )
 
-require("lsp.trouble")
+require("user.trouble")
 
 local lspConfig = require('lspconfig')
 local lspSignature = require('lsp_signature')
