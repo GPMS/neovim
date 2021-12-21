@@ -9,7 +9,7 @@ require('impatient')
 require'impatient'.enable_profile()
 
 require('user.material')
-require('user.settings')
+require('user.options')
 
 require('user.lsp')
 require('user.nvim-cmp')
