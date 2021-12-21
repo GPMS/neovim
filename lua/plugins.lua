@@ -46,9 +46,20 @@ return require('packer').startup({function(use)
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-compe'
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+            {"hrsh7th/cmp-nvim-lsp"},
+            {"hrsh7th/cmp-buffer"},
+            {"hrsh7th/cmp-path"},
+            {"hrsh7th/cmp-cmdline"},
+            {"saadparwaiz1/cmp_luasnip"},
+
+            {'SirVer/ultisnips'},
+            {'quangnguyen30192/cmp-nvim-ultisnips'},
+        }
+    }
     use 'ray-x/lsp_signature.nvim'
-    use 'SirVer/ultisnips'
     use {
         'folke/trouble.nvim',
         requires = 'kyazdani42/nvim-web-devicons',

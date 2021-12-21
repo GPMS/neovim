@@ -12,11 +12,11 @@ require('plugins.material')
 require('settings')
 
 require('lsp')
+require('plugins.nvim-cmp')
 
 require('plugins.galaxyline')
 require('plugins.indentline')
 require('plugins.nvim-tree')
-require('plugins.nvim-compe')
 require('plugins.ultisnips')
 require('plugins.nvim-toggleterm')
 require('plugins.telescope')
