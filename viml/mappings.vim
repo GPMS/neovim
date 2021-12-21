@@ -1,3 +1,6 @@
+let mapleader = " "
+let maplocalleader = " "
+
 nnoremap                <C-s>           :w<CR>
 nnoremap                <C-q>           :q<CR>
 
