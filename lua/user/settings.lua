@@ -1,48 +1,57 @@
-local opt = vim.opt
+vim.opt.shortmess:append "c"
+vim.opt.clipboard:append "unnamedplus"
 
-opt.shortmess:append "c"
-opt.showmode = false
-opt.hidden = true
-opt.timeoutlen = 500
-opt.signcolumn = "yes"
-opt.scrolloff = 8
-opt.mouse = "a"
-opt.lazyredraw = false
-opt.cursorline = true
-opt.clipboard:append "unnamedplus"
-opt.number = true
-opt.relativenumber = true
-opt.wrap = false
-opt.termguicolors = true
--- Tabbing
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = true
-opt.smartindent = true
--- Searching
-opt.hlsearch = false
-opt.ignorecase = true
-opt.smartcase = true
--- Folding
-opt.foldmethod = "syntax"
-opt.foldnestmax = 3
-opt.foldlevel = 3
-opt.foldenable = true
--- Backup
-opt.swapfile = false
-opt.backup = false
-opt.writebackup = false
-opt.undodir = os.getenv("HOME") .. "/.config/nvim/undo-dir"
-opt.undofile = true
--- Splits
-opt.splitright = true
-opt.splitbelow = true
+local options = {
+    -- Misc
+    showmode = false,
+    hidden = true,
+    timeoutlen = 500,
+    signcolumn = "yes",
+    scrolloff = 8,
+    mouse = "a",
+    lazyredraw = false,
+    cursorline = true,
+    colorcolumn = "121",
+    number = true,
+    relativenumber = true,
+    wrap = false,
+    termguicolors = true,
 
--- Code width limit
-opt.colorcolumn = "121"
+    -- Tabbing
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,
+    smartindent = true,
 
-local disabled_built_ins = {
+    -- Searching
+    hlsearch = false,
+    ignorecase = true,
+    smartcase = true,
+
+    -- Folding
+    foldenable = true,
+    foldmethod = "syntax",
+    foldnestmax = 3,
+    foldlevel = 3,
+
+    -- Backup
+    swapfile = false,
+    backup = false,
+    writebackup = false,
+    undodir = os.getenv("HOME") .. "/.config/nvim/undo-dir",
+    undofile = true,
+
+    -- Splits
+    splitright = true,
+    splitbelow = true,
+}
+
+for key, value in pairs(options )do
+    vim.opt[key] = value
+end
+
+local disabledBuiltIns = {
   "netrw",
   "netrwPlugin",
   "netrwSettings",
@@ -63,6 +72,6 @@ local disabled_built_ins = {
   "matchit",
 }
 
-for _, plugin in pairs(disabled_built_ins) do
+for _, plugin in pairs(disabledBuiltIns) do
   vim.g["loaded_" .. plugin] = 1
 end
