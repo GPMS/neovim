@@ -1,7 +1,5 @@
-vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
 vim.g.nvim_tree_quit_on_open = 0
 vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_hide_dotfiles = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_width_allow_resize  = 1
 vim.g.nvim_tree_show_icons = {
@@ -40,6 +38,10 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 require'nvim-tree'.setup {
     open_on_tab = true,
     auto_close = true,
+    filters = {
+        dotfiles = true,
+        custom = { 'node_modules' }
+    },
     view = {
         width = 30,
         mappings = {
