@@ -1,6 +1,6 @@
 vim.o.completeopt = "menuone,noselect"
 
-local cmp = require("cmp")
+vim.o.completeopt = "menuone,noselect"
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
@@ -73,9 +73,6 @@ cmp.setup {
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
-    },
-    documentation = {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     },
     experimental = {
         ghost_text = false,

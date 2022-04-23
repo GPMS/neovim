@@ -37,7 +37,11 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 require'nvim-tree'.setup {
     open_on_tab = true,
-    auto_close = true,
+    renderer = {
+        indent_markers = {
+            enable = true
+        }
+    },
     filters = {
         dotfiles = true,
         custom = { 'node_modules' }

@@ -1,8 +1,9 @@
 vim.g.material_style = 'palenight'
 
-require('material').setup({
-	contrast = true,
-	borders = true,
+material.setup({
+	disable = {
+		borders = false,
+	},
 	italics = {
 		comments = true,
 		keywords = true,
