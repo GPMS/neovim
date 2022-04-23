@@ -1,5 +1,8 @@
-vim.g.nvim_tree_quit_on_open = 0
-vim.g.nvim_tree_indent_markers = 1
+local tree_status_ok, tree = pcall(require, 'nvim-tree')
+if not tree_status_ok then
+    return
+end
+
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_width_allow_resize  = 1
 vim.g.nvim_tree_show_icons = {
@@ -35,7 +38,7 @@ vim.cmd[[
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
-require'nvim-tree'.setup {
+tree.setup {
     open_on_tab = true,
     renderer = {
         indent_markers = {
