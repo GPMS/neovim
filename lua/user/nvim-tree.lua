@@ -31,10 +31,17 @@ vim.g.nvim_tree_icons = {
     }
 }
 
-vim.cmd[[
-    highlight NvimTreeFolderName guifg=#569cdc gui=bold
-    highlight NvimTreeEmptyFolderName guifg=#569cdc gui=bold
-]]
+vim.api.nvim_create_autocmd({'FileType'}, {
+    pattern = "NvimTree",
+    callback = function ()
+        vim.o.signcolumn = "no"
+        vim.o.wrap = false
+        vim.cmd[[
+            highlight NvimTreeFolderName guifg=#569cdc gui=bold
+            highlight NvimTreeEmptyFolderName guifg=#569cdc gui=bold
+        ]]
+    end,
+})
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 

@@ -1,8 +1,8 @@
 vim.cmd[[
-    source ~/.config/nvim/viml/autocmd.vim
     source ~/.config/nvim/viml/mappings.vim
 ]]
 
+require('user.autocommands')
 require('user.plugins')
 
 local impatient = require('impatient')
