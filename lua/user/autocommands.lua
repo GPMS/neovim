@@ -13,6 +13,12 @@ vim.api.nvim_create_autocmd({'BufWritePost'}, {
     end,
 })
 
+vim.api.nvim_create_autocmd({'BufWritePre'}, {
+    callback = function ()
+        vim.cmd[[%s/\s\+$//e]]
+    end,
+})
+
 -- Reload vim files
 vim.api.nvim_create_autocmd({'BufWritePost'}, {
     pattern = {'mappings.vim'},
