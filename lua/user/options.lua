@@ -1,6 +1,3 @@
-vim.opt.shortmess:append "c"
-vim.opt.clipboard:append "unnamedplus"
-
 local options = {
     -- Misc
     showmode = false,
@@ -47,7 +44,10 @@ local options = {
     splitbelow = true,
 }
 
-for key, value in pairs(options )do
+vim.opt.shortmess:append "c"
+vim.opt.clipboard:append "unnamedplus"
+
+for key, value in pairs(options) do
     vim.opt[key] = value
 end
 
