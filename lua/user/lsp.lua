@@ -24,7 +24,7 @@ local on_attach = function()
 end
 
 local servers = {
-    'ccls',
+    'clangd',
     'bashls',
     'pyright',
     'vimls',
