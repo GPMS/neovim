@@ -8,12 +8,12 @@ require('user.plugins')
 local impatient = require('impatient')
 impatient.enable_profile()
 
-require('user.material')
 require('user.options')
 
 require('user.lsp')
 require('user.nvim-cmp')
 
+require('user.github-theme')
 require('user.galaxyline')
 require('user.indentline')
 require('user.nvim-tree')

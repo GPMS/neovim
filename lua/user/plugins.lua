@@ -27,7 +27,7 @@ return packer.startup({function(use)
     use 'lewis6991/impatient.nvim'
 
     -- Colors
-    use 'marko-cerovac/material.nvim'
+    use "projekt0n/github-nvim-theme"
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
