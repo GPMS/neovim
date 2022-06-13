@@ -3,33 +3,7 @@ if not tree_status_ok then
     return
 end
 
-vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_width_allow_resize  = 1
-vim.g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-}
---default will show icon by default if no icon is provided
---default shows no icon by default
-vim.g.nvim_tree_icons = {
-    default =  '',
-    symlink = '',
-    git = {
-        unstaged = "✗",
-        staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = "ﭖ"
-    },
-    folder = {
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = "",
-    }
-}
 
 vim.api.nvim_create_autocmd({'FileType'}, {
     pattern = "NvimTree",
@@ -48,9 +22,30 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 tree.setup {
     open_on_tab = true,
     renderer = {
+        highlight_git = true,
         indent_markers = {
             enable = true
-        }
+        },
+        icons = {
+            glyphs = {
+                default =  '',
+                symlink = '',
+                git = {
+                    unstaged = "✗",
+                    staged = "✓",
+                    unmerged = "",
+                    renamed = "➜",
+                    untracked = "ﭖ"
+                },
+                folder = {
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                }
+            }
+        },
     },
     filters = {
         dotfiles = true,
