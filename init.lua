@@ -1,9 +1,9 @@
 vim.api.nvim_exec('language en_UK', true)
 
-vim.cmd[[
-    source ~/.config/nvim/viml/autocmd.vim
-    source ~/.config/nvim/viml/mappings.vim
-]]
+local config_path = vim.fn.stdpath('config')
+
+vim.cmd("source " .. config_path .. "/viml/autocmd.vim")
+vim.cmd("source " .. config_path .. "/viml/mappings.vim")
 
 require('user.plugins')
 

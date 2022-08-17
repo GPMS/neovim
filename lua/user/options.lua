@@ -39,7 +39,7 @@ local options = {
     swapfile = false,
     backup = false,
     writebackup = false,
-    undodir = os.getenv("HOME") .. "/.config/nvim/undo-dir",
+    undodir = vim.fn.stdpath('config') .. '/undo-dir',
     undofile = true,
 
     -- Splits
