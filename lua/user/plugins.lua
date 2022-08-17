@@ -7,9 +7,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
     vim.cmd 'packadd packer.nvim'
 end
 
-require('packer_compiled')
+local packer = require('packer')
 
-return require('packer').startup({function(use)
+packer.init({
+    package_root = require('packer.util').join_paths(vim.fn.stdpath('data'), 'site', 'pack')
+})
+
+return packer.startup({function(use)
     use 'wbthomason/packer.nvim'
 
     -- Benchmark
