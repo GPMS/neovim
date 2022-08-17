@@ -6,12 +6,15 @@ vim.api.nvim_create_autocmd({'BufWritePost'}, {
     end,
 })
 
-vim.api.nvim_create_autocmd({'BufWritePost'}, {
-    pattern = {'plugins.lua'},
-    callback = function ()
-        vim.cmd[[PackerSync]]
-    end,
-})
+--[=[
+    vim.api.nvim_create_autocmd({'BufWritePost'}, {
+        pattern = {'plugins.lua'},
+        callback = function ()
+            require('plenary.reload').reload_module('user', true)
+            vim.cmd[[PackerSync]]
+        end,
+    })
+--]=]
 
 vim.api.nvim_create_autocmd({'BufWritePre'}, {
     callback = function ()
