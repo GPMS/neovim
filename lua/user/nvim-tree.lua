@@ -1,43 +1,52 @@
-vim.g.nvim_tree_quit_on_open = 0
-vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_width_allow_resize  = 1
-vim.g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-}
---default will show icon by default if no icon is provided
---default shows no icon by default
-vim.g.nvim_tree_icons = {
-    default =  '',
-    symlink = '',
-    git = {
-        unstaged = "✗",
-        staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = "ﭖ"
-    },
-    folder = {
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = "",
-    }
-}
+local tree_status_ok, tree = pcall(require, 'nvim-tree')
+if not tree_status_ok then
+    return
+end
 
-vim.cmd[[
-    highlight NvimTreeFolderName guifg=#569cdc gui=bold
-    highlight NvimTreeEmptyFolderName guifg=#569cdc gui=bold
-]]
+vim.g.nvim_tree_width_allow_resize  = 1
+
+vim.api.nvim_create_autocmd({'FileType'}, {
+    pattern = "NvimTree",
+    callback = function ()
+        vim.o.signcolumn = "no"
+        vim.o.wrap = false
+        vim.cmd[[
+            highlight NvimTreeFolderName guifg=#569cdc gui=bold
+            highlight NvimTreeEmptyFolderName guifg=#569cdc gui=bold
+        ]]
+    end,
+})
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
-require'nvim-tree'.setup {
+tree.setup {
     open_on_tab = true,
-    auto_close = true,
+    renderer = {
+        highlight_git = true,
+        indent_markers = {
+            enable = true
+        },
+        icons = {
+            glyphs = {
+                default =  '',
+                symlink = '',
+                git = {
+                    unstaged = "✗",
+                    staged = "✓",
+                    unmerged = "",
+                    renamed = "➜",
+                    untracked = "ﭖ"
+                },
+                folder = {
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                }
+            }
+        },
+    },
     filters = {
         dotfiles = true,
         custom = { 'node_modules' }

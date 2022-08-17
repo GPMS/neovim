@@ -9,22 +9,29 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 require("user.trouble")
 
-local lspConfig = require('lspconfig')
-local lspSignature = require('lsp_signature')
+local config_status_ok, config = pcall(require, 'lspconfig')
+if not config_status_ok then
+    return
+end
+
+local signature_status_ok, signature = pcall(require, 'lsp_signature')
+if not signature_status_ok then
+    return
+end
 
 local on_attach = function()
-    lspSignature.on_attach()
+    signature.on_attach()
 end
 
 local servers = {
-    'ccls',
+    'clangd',
     'bashls',
     'pyright',
     'vimls',
     'tsserver'
 }
 for _, lsp in ipairs(servers) do
-    lspConfig[lsp].setup {
+    config[lsp].setup {
         on_attach = on_attach
     }
 end
