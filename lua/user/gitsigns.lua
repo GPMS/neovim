@@ -11,8 +11,6 @@ signs.setup {
     topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
     changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
   },
-  numhl = false,
-  linehl = false,
   keymaps = {
     -- Default keymap options
     noremap = true,
@@ -34,16 +32,4 @@ signs.setup {
     ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
     ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
   },
-  watch_index = {
-    interval = 1000
-  },
-  current_line_blame = false,
-  current_line_blame_opts = {
-      delay = 1000,
-      virt_text = true,
-      virt_text_pos = 'eol'
-  },
-  sign_priority = 6,
-  update_debounce = 100,
-  status_formatter = nil, -- Use default
 }
