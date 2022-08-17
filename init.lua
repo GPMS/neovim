@@ -1,3 +1,5 @@
+vim.api.nvim_exec('language en_UK', true)
+
 vim.cmd[[
     source ~/.config/nvim/viml/autocmd.vim
     source ~/.config/nvim/viml/mappings.vim
