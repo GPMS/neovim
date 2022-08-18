@@ -21,6 +21,20 @@ end
 
 local on_attach = function()
     signature.on_attach()
+
+    local options = { silent = true, noremap = true }
+    local maplocal = vim.api.nvim_buf_set_keymap
+    maplocal(0, 'n', 'gd', ":lua vim.lsp.buf.definition()<CR>", options)
+    maplocal(0, 'n', 'gD', ":lua vim.lsp.buf.declaration()<CR>", options)
+    maplocal(0, 'n', 'gi', ":lua vim.lsp.buf.implementation()<CR>", options)
+    maplocal(0, 'n', 'gr', ":lua vim.lsp.buf.references()<CR>", options)
+    maplocal(0, 'n', '<Leader>k', ":lua vim.lsp.buf.hover()<CR>", options)
+    maplocal(0, 'n', '<Leader>d', ":lua vim.lsp.buf.type_definition()<CR>", options)
+    maplocal(0, 'n', '<Leader>rn', ":lua vim.lsp.buf.rename()<CR>", options)
+    maplocal(0, 'n', '<Leader>f', ":lua vim.lsp.buf.formatting()<CR>", options)
+    maplocal(0, 'n', '<Leader>e', ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", options)
+    maplocal(0, 'n', '<Leader>p', ":lua vim.lsp.diagnostic.goto_prev()<CR>", options)
+    maplocal(0, 'n', '<Leader>n', ":lua vim.lsp.diagnostic.goto_next()<CR>", options)
 end
 
 local servers = {

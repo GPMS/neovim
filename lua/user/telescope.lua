@@ -30,3 +30,10 @@ telescope.setup {
 
 telescope.load_extension('project')
 telescope.load_extension('fzy_native')
+
+local options = { silent = true, noremap = true }
+vim.api.nvim_set_keymap('n', '<Leader>tp', ":lua require'telescope'.extensions.project.project{}<CR>", options)
+vim.api.nvim_set_keymap('n', '<Leader>tf', ":Telescope find_files<CR>", options)
+vim.api.nvim_set_keymap('n', '<Leader>tb', ":Telescope buffers<CR>", options)
+vim.api.nvim_set_keymap('n', '<Leader>tg', ":Telescope live_grep<CR>", options)
+vim.api.nvim_set_keymap('n', '<Leader>tt', ":!ctags $(fd)<CR>:Telescope tags<CR>", options)

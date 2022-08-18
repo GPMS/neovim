@@ -84,3 +84,5 @@ tree.setup {
     }
 }
 
+local options = { silent = true, noremap = true }
+vim.api.nvim_set_keymap('n', '<F1>', ":NvimTreeToggle<CR>", options)
