@@ -14,10 +14,35 @@ if not config_status_ok then
     return
 end
 
+local installer_status_ok, installer = pcall(require, 'nvim-lsp-installer')
+if not installer_status_ok then
+    return
+end
+
 local signature_status_ok, signature = pcall(require, 'lsp_signature')
 if not signature_status_ok then
     return
 end
+
+local servers = {
+    'clangd',
+    'bashls',
+    'pyright',
+    'vimls',
+    'tsserver'
+}
+
+installer.setup({
+    ensure_installed = servers,
+    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+})
 
 local on_attach = function()
     signature.on_attach()
@@ -32,18 +57,11 @@ local on_attach = function()
     maplocal(0, 'n', '<Leader>d', ":lua vim.lsp.buf.type_definition()<CR>", options)
     maplocal(0, 'n', '<Leader>rn', ":lua vim.lsp.buf.rename()<CR>", options)
     maplocal(0, 'n', '<Leader>f', ":lua vim.lsp.buf.formatting()<CR>", options)
-    maplocal(0, 'n', '<Leader>e', ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", options)
-    maplocal(0, 'n', '<Leader>p', ":lua vim.lsp.diagnostic.goto_prev()<CR>", options)
-    maplocal(0, 'n', '<Leader>n', ":lua vim.lsp.diagnostic.goto_next()<CR>", options)
+    maplocal(0, 'n', '<Leader>e', ":lua vim.diagnostic.open_float()<CR>", options)
+    maplocal(0, 'n', '<Leader>p', ":lua vim.diagnostic.goto_prev()<CR>", options)
+    maplocal(0, 'n', '<Leader>n', ":lua vim.diagnostic.goto_next()<CR>", options)
 end
 
-local servers = {
-    'clangd',
-    'bashls',
-    'pyright',
-    'vimls',
-    'tsserver'
-}
 for _, lsp in ipairs(servers) do
     config[lsp].setup {
         on_attach = on_attach
@@ -62,7 +80,8 @@ elseif vim.fn.has("unix") == 1 then
     sumneko_root_path = "/home/" .. USER .. "/.config/nvim/lua-language-server"
     sumneko_binary = "/home/" .. USER .. "/.config/nvim/lua-language-server/bin/Linux/lua-language-server"
 else
-    print("Unsupported system for sumneko")
+    sumneko_root_path = vim.fn.stdpath('data') .. '/lsp_servers/sumneko_lua/extension/server'
+    sumneko_binary = sumneko_root_path .. '/bin/lua-language-server.exe'
 end
 
 require'lspconfig'.sumneko_lua.setup {
