@@ -21,3 +21,7 @@ treesitter.setup {
         enable = true,
     },
 }
+
+require'treesitter-context'.setup{
+    max_lines = 1
+}
