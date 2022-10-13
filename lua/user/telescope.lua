@@ -22,7 +22,9 @@ telescope.setup {
         },
         project = {
             base_dirs = {
-                {'~/Documents/projects', max_depth = 3}
+                {vim.fn.stdpath('config'), max_depth = 3},
+                {vim.fn.stdpath('data'), max_depth = 3},
+                --{'~/Documents/projects', max_depth = 3},
             },
         }
     }
