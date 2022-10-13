@@ -3,7 +3,7 @@ vim.api.nvim_exec('language en_UK', true)
 local config_path = vim.fn.stdpath('config')
 
 require('user.mappings')
-vim.cmd("source " .. config_path .. "/viml/mappings.vim")
+--vim.cmd("source " .. config_path .. "/viml/mappings.vim")
 
 require('user.autocommands')
 require('user.plugins')

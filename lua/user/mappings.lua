@@ -67,3 +67,35 @@ mapping('t', '<C-k>', "<C-\\><C-n>:wincmd k<CR>", options)
 mapping('t', '<C-h>', "<C-\\><C-n>:wincmd h<CR>", options)
 mapping('t', '<C-l>', "<C-\\><C-n>:wincmd l<CR>", options)
 
+local Build = function()
+    local winnr = vim.fn.win_getid()
+    local bufnr = vim.api.nvim_win_get_buf(winnr)
+    local ft = vim.bo.filetype
+    local current_file = vim.fn.expand('%')
+    local command = {
+        python = 'python ' .. current_file,
+        lua = 'lua ' .. current_file,
+        c = './build.sh'
+    }
+    vim.api.nvim_buf_set_option(bufnr, 'makeprg', command[ft])
+    vim.api.nvim_command("make")
+    vim.api.nvim_command("vert copen")
+    vim.api.nvim_command("wincmd =")
+end
+
+local Run = function()
+    local ft = vim.bo.filetype
+    local current_file = vim.fn.expand('%')
+    local command = {
+        python = 'python.exe ' .. current_file,
+        lua = 'lua ' .. current_file,
+        c = './run.sh'
+    }
+    print(command[ft])
+    vim.api.nvim_command('TermExec cmd="' .. command[ft] .. '"')
+end
+
+vim.keymap.set('n', '<F3>', Build, options)
+vim.keymap.set('n', '<F4>', Run, options)
+vim.keymap.set('t', '<F3>', Build, options)
+vim.keymap.set('t', '<F4>', Run, options)
