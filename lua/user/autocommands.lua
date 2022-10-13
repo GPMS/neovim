@@ -1,21 +1,3 @@
--- Reload lua files
-vim.api.nvim_create_autocmd({'BufWritePost'}, {
-    pattern = {'init.lua'},
-    callback = function ()
-        require('nvim-reload').Restart()
-    end,
-})
-
---[=[
-    vim.api.nvim_create_autocmd({'BufWritePost'}, {
-        pattern = {'plugins.lua'},
-        callback = function ()
-            require('plenary.reload').reload_module('user', true)
-            vim.cmd[[PackerSync]]
-        end,
-    })
---]=]
-
 vim.api.nvim_create_autocmd({'BufWritePre'}, {
     callback = function ()
         vim.cmd[[%s/\s\+$//e]]
