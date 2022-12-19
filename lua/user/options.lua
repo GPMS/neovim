@@ -12,6 +12,7 @@ local options = {
     number = true,
     relativenumber = true,
     wrap = false,
+    linebreak = true,
     termguicolors = true,
 
     -- Tabbing
