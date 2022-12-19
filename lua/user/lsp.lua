@@ -70,18 +70,15 @@ end
 
 USER = vim.fn.expand('$USER')
 
-local sumneko_root_path = ""
-local sumneko_binary = ""
+local sumneko_root_path = vim.fn.stdpath('data') .. '/lsp_servers/sumneko_lua/extension/server'
 
-if vim.fn.has("mac") == 1 then
-    sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/lua-language-server"
-    sumneko_binary = "/Users/" .. USER .. "/.config/nvim/lua-language-server/bin/macOS/lua-language-server"
-elseif vim.fn.has("unix") == 1 then
-    sumneko_root_path = "/home/" .. USER .. "/.config/nvim/lua-language-server"
-    sumneko_binary = "/home/" .. USER .. "/.config/nvim/lua-language-server/bin/Linux/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/"
+-- POSIX (Linux, Unix, Mac)
+if vim.fn.has("mac") == 1 or vim.fn.has("unix") == 1 then
+    sumneko_binary = sumneko_binary .. "lua-language-server"
+-- Windows
 else
-    sumneko_root_path = vim.fn.stdpath('data') .. '/lsp_servers/sumneko_lua/extension/server'
-    sumneko_binary = sumneko_root_path .. '/bin/lua-language-server.exe'
+    sumneko_binary = sumneko_binary .. 'lua-language-server.exe'
 end
 
 require'lspconfig'.sumneko_lua.setup {
