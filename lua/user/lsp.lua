@@ -25,11 +25,14 @@ if not signature_status_ok then
 end
 
 local servers = {
-    'clangd',
     'bashls',
+    'clangd',
+    'html',
+    'cssls',
     'pyright',
-    'vimls',
-    'tsserver'
+    'sumneko_lua',
+    'tsserver',
+    'vimls'
 }
 
 installer.setup({
@@ -62,9 +65,13 @@ local on_attach = function()
     maplocal(0, 'n', '<Leader>n', ":lua vim.diagnostic.goto_next()<CR>", options)
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 for _, lsp in ipairs(servers) do
     config[lsp].setup {
-        on_attach = on_attach
+        on_attach = on_attach,
+        capabilities = capabilities
     }
 end
 

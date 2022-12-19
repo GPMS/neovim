@@ -22,7 +22,7 @@ return packer.startup({function(use)
     -- Speed up require
     use 'lewis6991/impatient.nvim'
 
-    -- Colors
+    -- treesitter
     use "projekt0n/github-nvim-theme"
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -33,6 +33,7 @@ return packer.startup({function(use)
         'tikhomirov/vim-glsl',
         ft = 'glsl'
     }
+    use 'windwp/nvim-ts-autotag' -- Auto close/rename HTML tags
 
     -- Status bar
     use {
