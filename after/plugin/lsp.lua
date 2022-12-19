@@ -7,22 +7,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 )
 
-require("user.trouble")
-
-local config_status_ok, config = pcall(require, 'lspconfig')
-if not config_status_ok then
-    return
-end
-
-local installer_status_ok, installer = pcall(require, 'nvim-lsp-installer')
-if not installer_status_ok then
-    return
-end
-
-local signature_status_ok, signature = pcall(require, 'lsp_signature')
-if not signature_status_ok then
-    return
-end
+local config = require('lspconfig')
 
 local servers = {
     'bashls',
@@ -35,7 +20,7 @@ local servers = {
     'vimls'
 }
 
-installer.setup({
+require('nvim-lsp-installer').setup({
     ensure_installed = servers,
     automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
     ui = {
@@ -48,7 +33,7 @@ installer.setup({
 })
 
 local on_attach = function()
-    signature.on_attach()
+    require('lsp_signature').on_attach()
 
     local options = { silent = true, noremap = true }
     local maplocal = vim.api.nvim_buf_set_keymap
@@ -75,8 +60,6 @@ for _, lsp in ipairs(servers) do
     }
 end
 
-USER = vim.fn.expand('$USER')
-
 local sumneko_root_path = vim.fn.stdpath('data') .. '/lsp_servers/sumneko_lua/extension/server'
 
 local sumneko_binary = sumneko_root_path .. "/bin/"
@@ -88,7 +71,7 @@ else
     sumneko_binary = sumneko_binary .. 'lua-language-server.exe'
 end
 
-require'lspconfig'.sumneko_lua.setup {
+config.sumneko_lua.setup {
     on_attach = on_attach,
     cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
     settings = {

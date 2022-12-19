@@ -1,7 +1,4 @@
-local gl_status_ok, gl = pcall(require, 'galaxyline')
-if not gl_status_ok then
-    return
-end
+local gl = require('galaxyline')
 
 local condition = require('galaxyline.condition')
 

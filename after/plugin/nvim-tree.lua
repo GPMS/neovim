@@ -1,8 +1,3 @@
-local tree_status_ok, tree = pcall(require, 'nvim-tree')
-if not tree_status_ok then
-    return
-end
-
 vim.g.nvim_tree_width_allow_resize  = 1
 
 vim.api.nvim_create_autocmd({'FileType'}, {
@@ -19,7 +14,7 @@ vim.api.nvim_create_autocmd({'FileType'}, {
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
-tree.setup {
+require('nvim-tree').setup {
     open_on_tab = true,
     renderer = {
         highlight_git = true,

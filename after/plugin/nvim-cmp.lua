@@ -1,8 +1,3 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-    return
-end
-
 vim.o.completeopt = "menuone,noselect"
 
 --   פּ ﯟ   some other good icons
@@ -34,6 +29,8 @@ local kind_icons = {
     TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
+
+local cmp = require("cmp")
 
 cmp.setup {
     snippet = {
